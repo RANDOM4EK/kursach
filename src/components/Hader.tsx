@@ -46,6 +46,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
+
 export default function Hader() {
   return (
     <Box sx={{ flexGrow: 1, width: "220xp", backgroundColor: "red"}}>
