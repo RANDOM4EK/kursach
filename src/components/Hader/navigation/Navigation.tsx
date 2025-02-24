@@ -17,13 +17,14 @@ function Navigation() {
     { icon: <NorthIcon />, name: "Вверх" },
   ];
   return (
-    <>
+    <div>
       <div className={styles.navigationHader}>
         <span>Главная</span>
         <span>Каталог</span>
         <span>Наши работы</span>
         <span>Корзина</span>
         <span>Вопросы</span>
+        <span>Регистрация/Вход</span>
       </div>
       <div>
         <Box sx={{position:'absolute', bottom: 20 , right: 20, transform: "translateZ(0px)" }}>
@@ -41,7 +42,7 @@ function Navigation() {
           </SpeedDial>
         </Box>
       </div>
-    </>
+    </div>
   );
 }
 
