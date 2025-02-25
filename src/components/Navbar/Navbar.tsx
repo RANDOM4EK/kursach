@@ -20,7 +20,7 @@ function Navigation() {
     <div>
       <div className={styles.navigationHader}>
         <span>Главная</span>
-        <span>Каталог</span>
+        <span><a href="/catalog"></a>Каталог</span>
         <span>Наши работы</span>
         <span>Корзина</span>
         <span>Вопросы</span>
