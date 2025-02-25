@@ -1,15 +1,16 @@
-import LanguageSwitcherTest from './test/componentsTest/LanguageSwitcherTest';
-import Footer from './test/componentsTest/Footer';
-import Hader from './components/Hader';
+import Header from "./components/Hader/Header";
+import './App.css'
+
 
 function App() {
 	return (
-		<div>
-			<Hader/>
-			<Footer />
-			<LanguageSwitcherTest/>
-			
-		</div>
+		
+		<>
+		<Header/>
+		</>
+		
+		
+
 	);
 }
 
