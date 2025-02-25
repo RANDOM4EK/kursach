@@ -1,7 +1,6 @@
-import React from "react";
 import styles from "./Header.module.css";
 import Logo from "./Logo/Logo";
-import Navigation from "./navigation/Navigation";
+import Navbar from "../Navbar/Navbar";
 import Social from "./social/Social";
 
 function Header() {
@@ -9,7 +8,7 @@ function Header() {
     <header className={styles.backGraund}>
       <div className={styles.header}>
         <Logo />
-        <Navigation />
+        <Navbar/>
         <Social />
       </div>
     </header>
