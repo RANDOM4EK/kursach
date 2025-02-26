@@ -8,6 +8,10 @@ import PrivateRoute from "../privat/PrivateRoute";
 
 
 const AuthorizationForm = () => {
+
+    const submit = () =>{
+        PrivateRoute
+    }
   const context = useContext(AuthContext);
   if (!context) {
     throw new Error('AuthorizationForm must be used within a AuthProvider');
@@ -32,7 +36,7 @@ const AuthorizationForm = () => {
           value={password} 
           onChange={(e) => context.setPassword(e.target.value)}
         />
-        <button onClick={PrivateRoute}type="submit">Отправить</button>
+        <button onClick={submit}type="submit">Отправить</button>
       </form>
     </div>
   );
