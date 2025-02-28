@@ -1,23 +1,36 @@
-import Header from "./components/Hader/Header";
-import "./App.css";
+import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Catalog from "./components/catalog/Catalog";
-import AuthorizationForm from "./components/autorisation/AutorisationForm";
-import PrivateRoute from "./components/privat/PrivateRoute";
+import Layout from './components/layout/Layout';
+import Home from './pages/home/Home';
+import Catalog from './pages/Catalog';
+import Works from './pages/Works';
+import Cart from './pages/Cart';
+import Questions from './pages/Questions';
+import AuthorizationForm from './components/authorization/AuthorizationForm';
+import PrivateRoute from './components/private/PrivateRoute';
+import { AuthProvider } from './hooks/useAuth';
 
 function App() {
   return (
-    <>
+    <AuthProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Header />} />
-          <Route path="/login" element={<AuthorizationForm />} />
-          <Route path="/catalog" element={<PrivateRoute />}>
-            <Route path="/catalog" element={<Catalog />} />
+          <Route element={<Layout />}>
+            {/* Публичные маршруты */}
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<AuthorizationForm />} />
+
+            {/* Защищенные маршруты */}
+            <Route element={<PrivateRoute />}>
+              <Route path="/catalog" element={<Catalog />} />
+              <Route path="/works" element={<Works />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/questions" element={<Questions />} />
+            </Route>
           </Route>
         </Routes>
       </BrowserRouter>
-    </>
+    </AuthProvider>
   );
 }
 

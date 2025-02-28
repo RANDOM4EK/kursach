@@ -1,9 +1,0 @@
-.navigationHader{
-    display: flex;
-    gap: 20px;
-    
-  }
-  .navigationHader>span:hover{
-    transform: scale(1.2);
-    background-color: rgba(105, 105, 105, 0.486);
-  }
