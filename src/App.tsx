@@ -1,5 +1,4 @@
-import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import Home from './pages/home/Home';
 import Catalog from './pages/Catalog';
@@ -8,12 +7,12 @@ import Cart from './pages/Cart';
 import Questions from './pages/Questions';
 import AuthorizationForm from './components/authorization/AuthorizationForm';
 import PrivateRoute from './components/private/PrivateRoute';
-import { AuthProvider } from './hooks/useAuth';
+import { AuthProvider } from './providers/AuthProvider';
 
 function App() {
   return (
     <AuthProvider>
-      <BrowserRouter>
+      <Router>
         <Routes>
           <Route element={<Layout />}>
             {/* Публичные маршруты */}
@@ -29,7 +28,7 @@ function App() {
             </Route>
           </Route>
         </Routes>
-      </BrowserRouter>
+      </Router>
     </AuthProvider>
   );
 }

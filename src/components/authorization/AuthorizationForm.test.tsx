@@ -3,6 +3,7 @@ import { render, fireEvent } from '@testing-library/react';
 import * as RTL from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import AuthorizationForm from './AuthorizationForm';
+import { AuthProvider } from '../../providers/AuthProvider';
 
 // Мокаем useNavigate
 const mockNavigate = vi.fn();
@@ -29,9 +30,11 @@ vi.mock('../../hooks/useAuthHook', () => {
 // Создаем тестовую обертку
 const AuthFormWrapper = () => {
   return (
-    <BrowserRouter>
-      <AuthorizationForm />
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+        <AuthorizationForm />
+      </BrowserRouter>
+    </AuthProvider>
   );
 };
 

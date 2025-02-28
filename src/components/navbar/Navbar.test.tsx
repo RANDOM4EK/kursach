@@ -3,6 +3,7 @@ import { render, fireEvent } from '@testing-library/react';
 import * as RTL from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import Navbar from './Navbar';
+import { AuthProvider } from '../../providers/AuthProvider';
 
 // Мокаем useNavigate
 const mockNavigate = vi.fn();
@@ -27,9 +28,11 @@ vi.mock('../../hooks/useAuthHook', () => ({
 
 const NavbarWrapper = () => {
   return (
-    <BrowserRouter>
-      <Navbar />
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+        <Navbar />
+      </BrowserRouter>
+    </AuthProvider>
   );
 };
 

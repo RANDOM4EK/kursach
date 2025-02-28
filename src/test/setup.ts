@@ -10,7 +10,7 @@ type Matchers = typeof matchers;
 expect.extend(matchers as Matchers);
 
 // Мокаем useAuth глобально
-vi.mock('../../hooks/useAuthHook', () => ({
+vi.mock('../hooks/useAuthHook', () => ({
   __esModule: true,
   useAuth: vi.fn(() => ({
     login: vi.fn(),

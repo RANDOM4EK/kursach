@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuthHook';
-import './AuthorizationForm.css';
+import styles from './AuthorizationForm.module.css';
 
 const AuthorizationForm = () => {
   const [email, setEmail] = useState('');
@@ -16,10 +16,10 @@ const AuthorizationForm = () => {
   };
 
   return (
-    <div className="auth-container">
-      <form onSubmit={handleSubmit} className="auth-form">
+    <div className={styles.authContainer}>
+      <form onSubmit={handleSubmit} className={styles.authForm}>
         <h2>Авторизация</h2>
-        <div className="form-group">
+        <div className={styles.formGroup}>
           <label htmlFor="email">Email</label>
           <input
             id="email"
@@ -30,7 +30,7 @@ const AuthorizationForm = () => {
             required
           />
         </div>
-        <div className="form-group">
+        <div className={styles.formGroup}>
           <label htmlFor="password">Пароль</label>
           <input
             id="password"
@@ -41,7 +41,7 @@ const AuthorizationForm = () => {
             required
           />
         </div>
-        <button type="submit" className="auth-button">
+        <button type="submit" className={styles.authButton}>
           Войти
         </button>
       </form>
