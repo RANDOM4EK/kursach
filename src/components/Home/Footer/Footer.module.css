@@ -1,0 +1,35 @@
+
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+.items{
+    display: flex;
+    gap: 20px;
+}
+.item{
+    width: 70%;
+    background-color: #F1F3F4;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    padding-left: 20px;
+}
+.item2{
+    width: 30%;
+    background-color: #F1F3F4;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    padding-left: 20px;
+}
+.text1{
+    color: #8B8B8B;
+}
+.text2{
+    color: #282828;
+    font-size: 30px;
+}
+.map img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}

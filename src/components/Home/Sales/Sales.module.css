@@ -1,0 +1,75 @@
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+.items{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.item{
+    border: solid 1px #DDDDDD
+}
+.discount1{
+    display: flex;
+    flex-direction: row-reverse;
+    background-image: url(../../../assets/sale_img4.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    width: 316px;
+    height: 284px;
+}
+.discount2{
+    display: flex;
+    flex-direction: row-reverse;
+    background-image: url(../../../assets/sale_img3.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    width: 316px;
+    height: 284px;
+}
+.discount3{
+    display: flex;
+    flex-direction: row-reverse;
+    background-image: url(../../../assets/sale_img2.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    width: 316px;
+    height: 284px;
+}
+.discount4{
+    display: flex;
+    flex-direction: row-reverse;
+    background-image: url(../../../assets/sale_img1.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    width: 316px;
+    height: 284px;
+}
+.discount1 > p, 
+.discount2 > p, 
+.discount3 > p, 
+.discount4 > p {
+    display: flex;
+    width: 68px;
+    height: 34px;
+    color: white;
+    background-color: #339933;
+    margin-right: 16px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.itemText{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.itemPrice{
+    display: flex;
+    gap: 20px;
+}
+.itemPriceDiscount{
+    text-decoration: line-through;
+    color: #8B8B8B;
+}
