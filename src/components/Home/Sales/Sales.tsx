@@ -12,7 +12,6 @@ export default function Sales() {
           <div className={style.discount1}>
             <p>-50%</p>
           </div>
-
           <div className={style.itemText}>
             <p>Decorative forged bridge</p>
             <div className={style.itemPrice}>

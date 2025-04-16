@@ -1,0 +1,14 @@
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+.categories{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.category{
+    text-align: center;
+}
