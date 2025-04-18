@@ -2,6 +2,7 @@ import React from "react";
 import style from "./AllProduct.module.css";
 import Header from "../../components/Home/Header/Header";
 import Footer from "../../components/Home/Footer/Footer";
+import obj from "../../productsObj/ProductsObj.json";
 
 export default function AllProduct() {
   return (
@@ -19,138 +20,25 @@ export default function AllProduct() {
           <input type="text" placeholder="by default" />
         </div>
         <div className={style.products}>
-          <div className={style.item}>
-            <div className={style.discount1}>
-              <p>-50%</p>
-            </div>
-            <div className={style.itemText}>
-              <p>Decorative forged bridge</p>
-              <div className={style.itemPrice}>
-                <p>$500</p>
-                <p className={style.itemPriceDiscount}>$1000</p>
+        {obj.map((item) => {
+        return (
+          <div key={item.id} className={style.item}>
+            <div className={style.item}>
+              <div className={`flex flex-row-reverse bg-no-repeat bg-top-center w-[316px] h-[284px]`}
+              style={{ backgroundImage: `url(${item.img})` }}>
+                <p className={style.discount}>{item.discount}%</p>
+              </div>
+              <div className={style.itemText}>
+                <p>{item.title}</p>
+                <div className={style.itemPrice}>
+                  <p>${item.price}</p>
+                  <p className={style.itemPriceDiscount}>${item.priceDiscounted}</p>
+                </div>
               </div>
             </div>
           </div>
-          <div className={style.item}>
-            <div className={style.discount2}>
-              <p>-50%</p>
-            </div>
-            <div className={style.itemText}>
-              <p>Decorative forged bridge</p>
-              <div className={style.itemPrice}>
-                <p>$500</p>
-                <p className={style.itemPriceDiscount}>$1000</p>
-              </div>
-            </div>
-          </div>
-          <div className={style.item}>
-            <div className={style.discount3}>
-              <p>-50%</p>
-            </div>
-            <div className={style.itemText}>
-              <p>Decorative forged bridge</p>
-              <div className={style.itemPrice}>
-                <p>$500</p>
-                <p className={style.itemPriceDiscount}>$1000</p>
-              </div>
-            </div>
-          </div>
-          <div className={style.item}>
-            <div className={style.discount4}>
-              <p>-50%</p>
-            </div>
-            <div className={style.itemText}>
-              <p>Decorative forged bridge</p>
-              <div className={style.itemPrice}>
-                <p>$500</p>
-                <p className={style.itemPriceDiscount}>$1000</p>
-              </div>
-            </div>
-          </div>
-          <div className={style.item}>
-            <div className={style.discount5}>
-              <p>-50%</p>
-            </div>
-            <div className={style.itemText}>
-              <p>Decorative forged bridge</p>
-              <div className={style.itemPrice}>
-                <p>$500</p>
-                <p className={style.itemPriceDiscount}>$1000</p>
-              </div>
-            </div>
-          </div>
-          <div className={style.item}>
-            <div className={style.discount6}>
-              <p>-50%</p>
-            </div>
-            <div className={style.itemText}>
-              <p>Decorative forged bridge</p>
-              <div className={style.itemPrice}>
-                <p>$500</p>
-                <p className={style.itemPriceDiscount}>$1000</p>
-              </div>
-            </div>
-          </div>
-          <div className={style.item}>
-            <div className={style.discount7}>
-              <p>-50%</p>
-            </div>
-            <div className={style.itemText}>
-              <p>Decorative forged bridge</p>
-              <div className={style.itemPrice}>
-                <p>$500</p>
-                <p className={style.itemPriceDiscount}>$1000</p>
-              </div>
-            </div>
-          </div>
-          <div className={style.item}>
-            <div className={style.discount8}>
-              <p>-50%</p>
-            </div>
-            <div className={style.itemText}>
-              <p>Decorative forged bridge</p>
-              <div className={style.itemPrice}>
-                <p>$500</p>
-                <p className={style.itemPriceDiscount}>$1000</p>
-              </div>
-            </div>
-          </div>
-          <div className={style.item}>
-            <div className={style.discount9}>
-              <p>-50%</p>
-            </div>
-            <div className={style.itemText}>
-              <p>Decorative forged bridge</p>
-              <div className={style.itemPrice}>
-                <p>$500</p>
-                <p className={style.itemPriceDiscount}>$1000</p>
-              </div>
-            </div>
-          </div>
-          <div className={style.item}>
-            <div className={style.discount10}>
-              <p>-50%</p>
-            </div>
-            <div className={style.itemText}>
-              <p>Decorative forged bridge</p>
-              <div className={style.itemPrice}>
-                <p>$500</p>
-                <p className={style.itemPriceDiscount}>$1000</p>
-              </div>
-            </div>
-          </div>
-          <div className={style.item}>
-            <div className={style.discount11}>
-              <p>-50%</p>
-            </div>
-            <div className={style.itemText}>
-              <p>Decorative forged bridge</p>
-              <div className={style.itemPrice}>
-                <p>$500</p>
-                <p className={style.itemPriceDiscount}>$1000</p>
-              </div>
-            </div>
-          </div>
+        );
+      })}
         </div>
       </div>
 
