@@ -10,6 +10,7 @@
 }
 .filter > input{
     border: solid 1px #DDDDDD;
+    border-radius: 5px;
 }
 .products{
     display: flex;
