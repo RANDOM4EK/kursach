@@ -19,8 +19,10 @@
     margin-bottom: 40px;
 }
 .item{
-    border: solid 1px #DDDDDD
+    border: solid 1px #DDDDDD;
+    cursor: pointer;
 }
+
 
 .discount {
     display: flex;

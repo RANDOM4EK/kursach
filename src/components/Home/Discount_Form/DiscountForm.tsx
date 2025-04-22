@@ -6,7 +6,7 @@ export default function DiscountForm() {
     <div className={style.container}>
       <div className={style.h1InForm}><h1>5% off on the first order</h1></div>
       <div className={style.form}>
-        <div><img src={imageForm} alt="" /></div>
+        <img src={imageForm} alt="" />
         <div className={style.formContainer}>
           <form className={style.formFirstOrder}action="">
             <input className={style.formInput} type="text" placeholder='Name'/>

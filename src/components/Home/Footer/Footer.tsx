@@ -29,9 +29,7 @@ export default function Footer() {
           <p className={style.text2}>24 hours a day</p>
         </div>
       </div>
-      <div className={style.map}>
-        <img src={map} alt="" />
-      </div>
+        <img  className={style.map} src={map} alt="" />
     </div>
   );
 }

@@ -1,5 +1,4 @@
 import React from 'react'
-import style from "./Home.module.css"
 import Header from './Home/Header/Header'
 import Head from './Home/Head/Head'
 import Categories from './Home/Categories/Categories'

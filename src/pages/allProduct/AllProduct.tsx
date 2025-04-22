@@ -18,7 +18,7 @@ export default function AllProduct() {
 
   return (
     <>
-      <Header/>
+      <Header />
       <div className={style.container}>
         <h1>Tools and equipment</h1>
         <div className={style.filter}>
@@ -46,12 +46,13 @@ export default function AllProduct() {
           {filteredProducts.map((item) => (
             <div key={item.id} className={style.item}>
               <div className={style.item}>
+                
                 <div
                   className={`flex flex-row-reverse bg-no-repeat bg-top-center w-[316px] h-[284px]`}
                   style={{ backgroundImage: `url(${item.img})` }}
                 >
                   {item.isDiscounted && (
-                    <p className={style.discount}>{item.discount}%</p>
+                    <div className={style.discountContainer}><p className={style.discount}>{item.discount}%</p></div>
                   )}
                 </div>
                 <div className={style.itemText}>
@@ -70,7 +71,7 @@ export default function AllProduct() {
           ))}
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }
