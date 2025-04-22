@@ -3,8 +3,13 @@ import style from "./AllProduct.module.css";
 import Header from "../../components/Home/Header/Header";
 import Footer from "../../components/Home/Footer/Footer";
 import obj from "../../productsObj/ProductsObj.json";
+import { useNavigate } from "react-router-dom";
 
 export default function AllProduct() {
+  const navigate = useNavigate();
+  const handleProductClick = (id: number) => {
+    navigate(`/product/${id}`);
+  };
   const [minPrice, setMinPrice] = useState(Number);
   const [maxPrice, setMaxPrice] = useState(Number);
   const [showDiscounted, setShowDiscounted] = useState(false);
@@ -45,8 +50,7 @@ export default function AllProduct() {
         <div className={style.products}>
           {filteredProducts.map((item) => (
             <div key={item.id} className={style.item}>
-              <div className={style.item}>
-                
+              <div onClick={()=>handleProductClick(item.id)} className={style.item}>
                 <div
                   className={`flex flex-row-reverse bg-no-repeat bg-top-center w-[316px] h-[284px]`}
                   style={{ backgroundImage: `url(${item.img})` }}

@@ -3,6 +3,7 @@ import style from "./NotFound.module.css";
 import imgError from "../../assets/mage-from-rawpixel-id-7607931-png 1.png";
 import Header from "../../components/Home/Header/Header";
 import Footer from "../../components/Home/Footer/Footer";
+import { Link } from "react-router-dom";
 
 export default function NotFound() {
   return (
@@ -22,7 +23,7 @@ export default function NotFound() {
         </p>
       </div>
       <div className={style.button}>
-        <button>Go Home</button>
+        <button><Link to="/">Go Home</Link></button>
       </div>
     </div>
     <Footer></Footer>

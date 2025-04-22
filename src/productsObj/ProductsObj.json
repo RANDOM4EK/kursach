@@ -7,7 +7,8 @@
     "discount": -17,
     "priceDiscounted": 199,
     "isDiscounted": true,
-    "img": "product1.png"
+    "img": "product1.png",
+    "description": "High-quality secateurs for pruning and shaping plants. Ergonomic design for comfortable use."
   },
   {
     "id": 2,
@@ -16,7 +17,8 @@
     "discount": -26,
     "priceDiscounted": 26,
     "isDiscounted": true,
-    "img": "./product2.png"
+    "img": "./product2.png",
+    "description": "High-quality secateurs for pruning and shaping plants. Ergonomic design for comfortable use."
   },
   {
     "id": 3,
@@ -25,7 +27,8 @@
     "discount": -36,
     "priceDiscounted": 9,
     "isDiscounted": true,
-    "img": "./product3.png"
+    "img": "./product3.png",
+    "description": "High-quality secateurs for pruning and shaping plants. Ergonomic design for comfortable use."
   },
   {
     "id": 4,
@@ -34,7 +37,8 @@
     "discount": 0,
     "priceDiscounted": 0,
     "isDiscounted": false,
-    "img": "./product4.png"
+    "img": "./product4.png",
+    "description": "High-quality secateurs for pruning and shaping plants. Ergonomic design for comfortable use."
   },
   {
     "id": 5,
@@ -43,7 +47,8 @@
     "discount": 0,
     "priceDiscounted": 0,
     "isDiscounted": false,
-    "img": "./product5.png"
+    "img": "./product5.png",
+    "description": "High-quality secateurs for pruning and shaping plants. Ergonomic design for comfortable use."
   },
   {
     "id": 6,
@@ -52,7 +57,8 @@
     "discount": 0,
     "priceDiscounted": 0,
     "isDiscounted": false,
-    "img": "./product6.png"
+    "img": "./product6.png",
+    "description": "High-quality secateurs for pruning and shaping plants. Ergonomic design for comfortable use."
   },
   {
     "id": 7,
@@ -61,7 +67,8 @@
     "discount": 0,
     "priceDiscounted": 0,
     "isDiscounted": false,
-    "img": "./product7.png"
+    "img": "./product7.png",
+    "description": "High-quality secateurs for pruning and shaping plants. Ergonomic design for comfortable use."
   },
   {
     "id": 8,
@@ -70,7 +77,8 @@
     "discount": -18,
     "priceDiscounted": 98,
     "isDiscounted": true,
-    "img": "./product8.png"
+    "img": "./product8.png",
+    "description": "High-quality secateurs for pruning and shaping plants. Ergonomic design for comfortable use."
   },
   {
     "id": 9,
@@ -79,7 +87,8 @@
     "discount": -50,
     "priceDiscounted": 500,
     "isDiscounted": true,
-    "img": "./product9.png"
+    "img": "./product9.png",
+    "description": "High-quality secateurs for pruning and shaping plants. Ergonomic design for comfortable use."
   },
   {
     "id": 10,
@@ -88,7 +97,8 @@
     "discount": -34,
     "priceDiscounted": 100,
     "isDiscounted": true,
-    "img": "./product10.png"
+    "img": "./product10.png",
+    "description": "High-quality secateurs for pruning and shaping plants. Ergonomic design for comfortable use."
   },
   {
     "id": 11,
@@ -97,6 +107,7 @@
     "discount": -25,
     "priceDiscounted": 150,
     "isDiscounted": true,
-    "img": "./product11.png"
+    "img": "./product11.png",
+    "description": "High-quality secateurs for pruning and shaping plants. Ergonomic design for comfortable use."
   }
 ]
