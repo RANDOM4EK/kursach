@@ -13,7 +13,7 @@ export default function Header() {
             <span><Link to="/All_Product">All products</Link></span>
             <span>All sales</span>
         </div>
-        <div className={style.purchases}><img src={icon} alt="" /></div>
+        <div className={style.purchases}><Link to={'/brasker'}><img src={icon} alt="" /></Link></div>
     </header>
   )
 }

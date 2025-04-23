@@ -7,7 +7,7 @@
     "discount": -17,
     "priceDiscounted": 199,
     "isDiscounted": true,
-    "img": "product1.png",
+    "img": "./product1.png",
     "description": "High-quality secateurs for pruning and shaping plants. Ergonomic design for comfortable use."
   },
   {
