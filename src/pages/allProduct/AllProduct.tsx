@@ -10,8 +10,8 @@ export default function AllProduct() {
   const handleProductClick = (id: number) => {
     navigate(`/product/${id}`);
   };
-  const [minPrice, setMinPrice] = useState(Number);
-  const [maxPrice, setMaxPrice] = useState(Number);
+  const [minPrice, setMinPrice] = useState<number | null>(null);
+  const [maxPrice, setMaxPrice] = useState<number | null>(null);
   const [showDiscounted, setShowDiscounted] = useState(false);
   const filteredProducts = obj.filter((item) => {
     const isWithinPriceRange =
@@ -31,13 +31,13 @@ export default function AllProduct() {
           <input
             type="number"
             placeholder="от"
-            value={minPrice}
+            value={minPrice ?? ""}
             onChange={(e) => setMinPrice(Number(e.target.value))}
           />
           <input
             type="number"
             placeholder="до"
-            value={maxPrice}
+            value={maxPrice ?? ""}
             onChange={(e) => setMaxPrice(Number(e.target.value))}
           />
           <p>Discounted items</p>
@@ -50,24 +50,39 @@ export default function AllProduct() {
         <div className={style.products}>
           {filteredProducts.map((item) => (
             <div key={item.id} className={style.item}>
-              <div onClick={()=>handleProductClick(item.id)} className={style.item}>
+              <div
+                onClick={() => handleProductClick(item.id)}
+                className={style.item}
+              >
                 <div
                   className={`flex flex-row-reverse bg-no-repeat bg-top-center w-[316px] h-[284px]`}
                   style={{ backgroundImage: `url(${item.img})` }}
                 >
                   {item.isDiscounted && (
-                    <div className={style.discountContainer}><p className={style.discount}>{item.discount}%</p></div>
+                    <div className={style.discountContainer}>
+                      <p className={style.discount}>{item.discount * -100}%</p>
+                    </div>
                   )}
                 </div>
                 <div className={style.itemText}>
                   <p>{item.title}</p>
                   <div className={style.itemPrice}>
-                    <p>${item.price}</p>
+                    
                     {item.isDiscounted && (
-                      <p className={style.itemPriceDiscount}>
-                        ${item.priceDiscounted}
+                      <p className={style.itemPrice}>
+                        {"$" + Math.round(item.price - item.price * item.discount)}
                       </p>
                     )}
+                    <p
+                      className={
+                        item.isDiscounted
+                          ? style.itemPriceDiscount
+                          : style.itemPrice
+                      }
+                    >
+                      {"$" + item.price}
+                    </p>
+                    
                   </div>
                 </div>
               </div>

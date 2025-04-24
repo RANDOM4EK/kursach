@@ -15,8 +15,11 @@ export default function Footer() {
         </div>
         <div className={style.item2}>
           <p className={style.text1}>Socials</p>
-          <img src={iconInstagram} alt="" />
-          <img src={iconWhatApp} alt="" />
+          <div className="flex flex-row gap-2">
+            <img src={iconInstagram} alt="" />
+            <img src={iconWhatApp} alt="" />
+          </div>
+          
         </div>
       </div>
       <div className={style.items}>

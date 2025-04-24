@@ -1,11 +1,16 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import obj from "../../productsObj/ProductsObj.json";
 import style from "./Tovar.module.css";
 import Header from "../../components/Home/Header/Header";
 import Footer from "../../components/Home/Footer/Footer";
 
 export default function ProductDetails() {
+  const navigate = useNavigate();
+  const handleProductClick = () => {
+    navigate(`/brasker`);
+  };
+
   const { id } = useParams();
   const product = id ? obj.find((item) => item.id === parseInt(id)) : undefined;
 
@@ -22,9 +27,8 @@ export default function ProductDetails() {
       setQuantity(quantity - 1);
     }
   };
-  const totalPrice = product.price * quantity;
   const totalDiscountedPrice = product.isDiscounted
-    ? product.priceDiscounted * quantity
+    ? Math.round(product.price - product.price * product.discount) * quantity
     : null;
 
   return (
@@ -38,19 +42,28 @@ export default function ProductDetails() {
         />
         <div className={style.cartTovar}>
           <h1>{product.title}</h1>
-          <div className={style.totalPrice}> 
-            {product.isDiscounted && <p>{"$"+totalDiscountedPrice}</p>}
-            <p className={style.itemPriceDiscount}>{"$"+totalPrice}</p>
+          <div className={style.totalPrice}>
+            {product.isDiscounted && <p>{"$" + totalDiscountedPrice}</p>}
+            {product.isDiscounted && <p className={style.itemPriceDiscount}>{"$" + product.price*quantity}</p>}
+            {product.isDiscounted && (<p className={style.discount}>{product.discount*-100}%</p>)}
+            {!product.isDiscounted && <p>{"$" + product.price * quantity}</p>}
+            
           </div>
           <div className={style.quantity}>
-            <button className={style.increment} onClick={decrementQuantity}>-</button>
+            <button className={style.increment} onClick={decrementQuantity}>
+              -
+            </button>
             <p>{quantity}</p>
-            <button className={style.increment} onClick={incrementQuantity}>+</button>
+            <button className={style.increment} onClick={incrementQuantity}>
+              +
+            </button> 
+            <button onClick={() => handleProductClick()} className={style.buttonAddToCart}>Add to cart</button>
           </div>
-          <button className={style.buttonAddToCart}>Add to cart</button>
+         
           <p>{product.description}</p>
         </div>
       </div>
+      <div className="mmm"></div>
       <Footer />
     </>
   );

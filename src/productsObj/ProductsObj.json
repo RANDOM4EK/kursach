@@ -4,8 +4,7 @@
     "id": 1,
     "title": "Secateurs",
     "price": 240,
-    "discount": -17,
-    "priceDiscounted": 199,
+    "discount": 0.17,
     "isDiscounted": true,
     "img": "./product1.png",
     "description": "High-quality secateurs for pruning and shaping plants. Ergonomic design for comfortable use."
@@ -14,8 +13,7 @@
     "id": 2,
     "title": "Collection for berries (plastic)",
     "price": 35,
-    "discount": -26,
-    "priceDiscounted": 26,
+    "discount": 0.26,
     "isDiscounted": true,
     "img": "./product2.png",
     "description": "High-quality secateurs for pruning and shaping plants. Ergonomic design for comfortable use."
@@ -24,8 +22,7 @@
     "id": 3,
     "title": "Gloves (black)",
     "price": 14,
-    "discount": -36,
-    "priceDiscounted": 9,
+    "discount": 0.36,
     "isDiscounted": true,
     "img": "./product3.png",
     "description": "High-quality secateurs for pruning and shaping plants. Ergonomic design for comfortable use."
@@ -34,8 +31,7 @@
     "id": 4,
     "title": "Sickle-shaped hacksaw",
     "price": 155,
-    "discount": 0,
-    "priceDiscounted": 0,
+    "discount": 1,
     "isDiscounted": false,
     "img": "./product4.png",
     "description": "High-quality secateurs for pruning and shaping plants. Ergonomic design for comfortable use."
@@ -44,8 +40,7 @@
     "id": 5,
     "title": "Bayonet shovel",
     "price": 180,
-    "discount": 0,
-    "priceDiscounted": 0,
+    "discount": 1,
     "isDiscounted": false,
     "img": "./product5.png",
     "description": "High-quality secateurs for pruning and shaping plants. Ergonomic design for comfortable use."
@@ -54,8 +49,7 @@
     "id": 6,
     "title": "Garden pitchfork",
     "price": 179,
-    "discount": 0,
-    "priceDiscounted": 0,
+    "discount": 1,
     "isDiscounted": false,
     "img": "./product6.png",
     "description": "High-quality secateurs for pruning and shaping plants. Ergonomic design for comfortable use."
@@ -64,8 +58,7 @@
     "id": 7,
     "title": "Barbell",
     "price": 12,
-    "discount": 0,
-    "priceDiscounted": 0,
+    "discount": 1,
     "isDiscounted": false,
     "img": "./product7.png",
     "description": "High-quality secateurs for pruning and shaping plants. Ergonomic design for comfortable use."
@@ -74,8 +67,7 @@
     "id": 8,
     "title": "Souvenir thermometer",
     "price": 120,
-    "discount": -18,
-    "priceDiscounted": 98,
+    "discount": 0.18,
     "isDiscounted": true,
     "img": "./product8.png",
     "description": "High-quality secateurs for pruning and shaping plants. Ergonomic design for comfortable use."
@@ -84,8 +76,7 @@
     "id": 9,
     "title": "Decorative forged bridge",
     "price": 1000,
-    "discount": -50,
-    "priceDiscounted": 500,
+    "discount": 0.50,
     "isDiscounted": true,
     "img": "./product9.png",
     "description": "High-quality secateurs for pruning and shaping plants. Ergonomic design for comfortable use."
@@ -94,8 +85,7 @@
     "id": 10,
     "title": "Flower basket",
     "price": 150,
-    "discount": -34,
-    "priceDiscounted": 100,
+    "discount": 0.34,
     "isDiscounted": true,
     "img": "./product10.png",
     "description": "High-quality secateurs for pruning and shaping plants. Ergonomic design for comfortable use."
@@ -104,8 +94,7 @@
     "id": 11,
     "title": "Aquarium lock",
     "price": 200,
-    "discount": -25,
-    "priceDiscounted": 150,
+    "discount": 0.25,
     "isDiscounted": true,
     "img": "./product11.png",
     "description": "High-quality secateurs for pruning and shaping plants. Ergonomic design for comfortable use."
