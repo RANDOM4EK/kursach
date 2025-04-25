@@ -1,0 +1,18 @@
+.container{
+    width: 80%;
+    display: flxe;
+    margin: 0 auto;
+}
+.firsH1{
+    font-weight: 700;
+    font-size: 64px;
+}
+.startShopping{
+    text-align: center;
+    background-color: #339933;
+    color: white;
+    width: 300px;
+    height: 58px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
