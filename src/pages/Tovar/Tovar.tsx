@@ -1,14 +1,14 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import obj from "../../productsObj/ProductsObj.json";
 import style from "./Tovar.module.css";
 import Header from "../../components/Home/Header/Header";
 import Footer from "../../components/Home/Footer/Footer";
-import { BasketContext } from "../../context/BasketContext";
+import useBasketStore from "../../store/Store";
 
 export default function ProductDetails() {
   const { id } = useParams();
-  const { addToBasket } = useContext(BasketContext)!;
+  const { addToBasket } = useBasketStore();
   const product = id ? obj.find((item) => item.id === Number(id)) : undefined;
 
   const [quantity, setQuantity] = useState(1);
@@ -38,11 +38,11 @@ export default function ProductDetails() {
         <div className={style.cartTovar}>
           <h1>{product.title}</h1>
           <div className={style.totalPrice}>
-            {product.isDiscounted && <p>{"$" + Math.round(product.price - product.price * product.discount)}</p>}
             {product.isDiscounted && (
-              <p className={style.itemPriceDiscount}>
-                {"$" + product.price}
-              </p>
+              <p>{"$" + Math.round(product.price - product.price * product.discount)}</p>
+            )}
+            {product.isDiscounted && (
+              <p className={style.itemPriceDiscount}>{"$" + product.price}</p>
             )}
             {!product.isDiscounted && <p>{"$" + product.price}</p>}
           </div>

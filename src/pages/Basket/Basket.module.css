@@ -16,3 +16,7 @@
     border-radius: 10px;
     margin-bottom: 50px;
 }
+.basketItem{
+    border: solid 1px #DDDDDD;
+    display: flex;
+}

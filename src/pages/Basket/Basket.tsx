@@ -1,18 +1,12 @@
-import { useContext } from "react";
+import React from "react";
 import Header from "../../components/Home/Header/Header";
 import Footer from "../../components/Home/Footer/Footer";
 import style from "./Basket.module.css";
-import { BasketContext } from "../../context/BasketContext";
 import { useNavigate } from "react-router-dom";
+import useBasketStore from "../../store/Store";
 
 export default function Basket() {
-  const basketContext = useContext(BasketContext);
-
-  if (!basketContext) {
-    throw new Error("BasketContext is null. Ensure it is provided in the component tree.");
-  }
-
-  const { basket, removeFromBasket } = basketContext;
+  const { basket, removeFromBasket } = useBasketStore();
   const navigate = useNavigate();
 
   const totalPrice = basket.reduce(
