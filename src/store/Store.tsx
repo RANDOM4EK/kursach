@@ -16,12 +16,12 @@ interface BasketStore {
   basket: Product[];
   addToBasket: (product: { id: number; quantity: number }) => void;
   removeFromBasket: (id: number) => void;
+  updateQuantity: (id: number, quantity: number) => void;
 }
-
-const useBasketStore = create<BasketStore>((set: (arg0: { (state: { basket: any[]; }): { basket: any[]; }; (state: any): { basket: any; }; }) => any) => ({
+const useBasketStore = create<BasketStore>((set) => ({
   basket: [],
-  addToBasket: (product: { id: number; quantity: any; }) =>
-    set((state: { basket: any[]; }) => {
+  addToBasket: (product: { id: number; quantity: number }) =>
+    set((state) => {
       const existingProduct = state.basket.find((item) => item.id === product.id);
       if (existingProduct) {
         return {
@@ -41,10 +41,17 @@ const useBasketStore = create<BasketStore>((set: (arg0: { (state: { basket: any[
         return state;
       }
     }),
-  removeFromBasket: (id: any) =>
+  removeFromBasket: (id: number) =>
     set((state) => ({
-      basket: state.basket.filter((item: { id: any; }) => item.id !== id),
+      basket: state.basket.filter((item) => item.id !== id),
     })),
+    updateQuantity: (id: number, quantity: number) => {
+    set((state) => ({
+      basket: state.basket.map((item) =>
+        item.id === id ? { ...item, quantity } : item
+      ),
+    }));
+  },
 }));
 
 export default useBasketStore;

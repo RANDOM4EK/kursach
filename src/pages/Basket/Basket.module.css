@@ -1,7 +1,9 @@
+
 .container{
     width: 80%;
     display: flxe;
     margin: 0 auto;
+    margin-bottom: 50px;
 }
 .firsH1{
     font-weight: 700;
@@ -16,7 +18,63 @@
     border-radius: 10px;
     margin-bottom: 50px;
 }
+.basketItems{
+    display: flex;
+
+    gap: 20px;
+}
+.basketItemsList{
+    display: flex;
+    width: 70%;
+    flex-direction: column;
+    gap: 20px;
+}
 .basketItem{
     border: solid 1px #DDDDDD;
     display: flex;
+}
+.orderDetails{
+    display: flex;
+    flex-direction: column;
+    background-color: #F1F3F4;
+    border-radius: 20px;
+    gap: 20px;
+    width: 30%;
+}
+.quantityControl{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.increment{
+    height: 58px;
+    width: 58px;
+    border: solid 1px #DDDDDD;
+    color: #DDDDDD;
+    border-radius: 10px;
+    font-size: 30px;
+    cursor: pointer;
+}
+.itemPrice{
+    font-size: 40px;
+}
+.itemPriceDiscount{
+    text-decoration: line-through;
+    color: #8B8B8B;
+    font-size: 40px;
+}
+.itemDetails{
+    display: flex
+;
+    flex-direction: column;
+    justify-content: center;
+    border-left: solid 1px #DDDDDD;
+    padding-left: 10px;
+}
+.removeButton{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    margin-right: 5px;
+    margin-top: 2px;
 }
