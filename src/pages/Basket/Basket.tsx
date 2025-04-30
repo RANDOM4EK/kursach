@@ -83,7 +83,10 @@ export default function Basket() {
                       {item.isDiscounted && (
                         <p className={style.itemPrice}>
                           {"$" +
-                            Math.round(item.price - item.price * item.discount)*item.quantity}
+                            Math.round(
+                              item.price - item.price * item.discount
+                            ) *
+                              item.quantity}
                         </p>
                       )}
                       <p
@@ -93,7 +96,7 @@ export default function Basket() {
                             : style.itemPrice
                         }
                       >
-                        {"$" + item.price*item.quantity}
+                        {"$" + item.price * item.quantity}
                       </p>
                     </div>
                   </div>
@@ -109,7 +112,16 @@ export default function Basket() {
             <div className={style.orderDetails}>
               <h2>Order details</h2>
               <p>{totalQuantity} items</p>
-              <p className={style.totalPrice}>Total {totalPrice.toFixed(0)}$</p>
+              <div className={style.totalPriceContainer}>
+                <p>Total</p>
+                <p className={style.totalPrice}>${totalPrice.toFixed(0)},00</p>
+              </div>
+              <form action="" className={style.form}>
+                <input type="text" placeholder="Name"/>
+                <input type="text" placeholder="Phone number"/>
+                <input type="text" placeholder="Email"/>
+                <button className={style.buttonForm} onClick={() => alert("name")}>Order</button>
+              </form>
             </div>
           </div>
         )}
