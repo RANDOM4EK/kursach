@@ -16,3 +16,55 @@
     text-decoration: none;
     color: black;
 }
+.registr{
+    position: fixed;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.39);
+    width: 1920px;
+    height: 1920px;
+}
+.registrForm{
+    left: 0;
+}
+.form_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.39);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form_container > form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    text-align: center;
+}
+
+.form_container h2 {
+    margin-bottom: 15px;
+}
+.form_container input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.form_container button {
+    width: 100%;
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.form_container button:hover {
+    background: #0056b3;
+}
