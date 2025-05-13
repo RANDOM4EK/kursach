@@ -74,3 +74,63 @@
     text-decoration: line-through;
     color: #8B8B8B;
 }
+@media (width < 1200px) {
+
+    .container{
+        width: 100%;
+    }
+    .items{
+        justify-content: center;
+    }
+    .item{
+        width: 100%;
+        max-width: 316px;
+    }
+    .itemText{
+        width: 100%;
+        max-width: 316px;
+    }
+    .itemPrice{
+        width: 100%;
+        max-width: 316px;
+    }
+    .itemPriceDiscount{
+        width: 100%;
+        max-width: 316px;
+    }
+    .discount1{
+        width: 100%;
+        max-width: 316px;
+    }
+    .discount2{
+        width: 100%;
+        max-width: 316px;
+    }
+    .discount3{
+        width: 100%;
+        max-width: 316px;
+    }
+    .discount4{
+        width: 100%;
+        max-width: 316px;
+    }
+    .discount1 > p,
+    .discount2 > p,
+    .discount3 > p,
+    .discount4 > p {
+        width: 68px;
+        max-width: 316px;
+    }
+    .itemText > p{
+        width: 100%;
+        max-width: 316px;
+    }
+    .itemPrice > p{
+        width: 100%;
+        max-width: 316px;
+    }
+    .itemPriceDiscount > p{
+        width: 100%;
+        max-width: 316px;
+    }
+  }

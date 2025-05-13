@@ -45,3 +45,24 @@
     border: none;
     border-radius: 10px;
 }
+@media (width < 1200px) {
+    .form>img{
+        display: none;
+    }
+    .battonForm{
+        margin-bottom: 10px;
+    }
+}
+
+@media (width < 545px) {
+    .h1InForm{
+        font-size: 30px;
+    }
+    
+}
+@media (width < 410px) {
+    .h1InForm{
+        font-size: 20px;
+    }
+    
+}

@@ -61,3 +61,44 @@
     background-color: #339933;
     cursor: pointer;
 }
+
+@media (width < 910px) {
+    .quantity{
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    
+}
+@media (width < 910px) {
+    .cartTovar > h1{
+        font-size: 20px;
+    }
+    .totalPrice{
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+    }
+    .itemPriceDiscount{
+        font-size: 20px;
+    }
+    .increment{
+        height: 40px;
+        width: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+    
+}
+@media (width < 400px) {
+    .buttonAddToCart{
+        width: 100px;
+        height: 40px;
+    }
+    .cartTovar{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+}
