@@ -100,5 +100,8 @@
         margin-top: 20px;
         margin-bottom: 20px;
     }
+    .container{
+        flex-direction: column;
+    }
     
 }

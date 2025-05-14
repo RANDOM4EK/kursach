@@ -120,3 +120,69 @@
     border-radius: 10px;
     font-size: 30px;
 }
+@media (max-width: 1340px) {
+    .totalPrice{
+        font-size: 40px;
+    }
+    
+}
+@media (max-width: 1280px) {
+    .basketItem{
+        flex-direction: column;
+        
+    }
+    .removeButton{
+            display: flex;
+            flex-direction: row-reverse;
+            width: 100%;
+            padding: 10px;
+            align-items: center;
+        }
+    
+}
+@media (max-width: 1155px) {
+    .orderDetails > h2{
+        font-size: 30px;
+        
+    }
+    
+}
+@media (max-width: 1020px) {
+    .orderDetails > h2{
+        font-size: 20px;
+        
+    }
+    .totalPrice{
+        font-size: 20px;
+    }
+    .form > input{
+        font-size: 20px;
+    }
+    
+}
+@media (max-width: 760px) {
+    .orderDetails > p{
+        font-size: 20px;
+    }
+    .totalPriceContainer > p{
+        font-size: 20px;
+    }
+    .form > input {
+        font-size: 16px;
+    }
+    .buttonForm{
+        height: 40px;
+        font-size: 16px;
+    }
+}
+@media (max-width: 600px) {
+    .basketItems{
+        flex-direction: column;
+    }
+    .basketItemsList{
+        width: 100%;
+    }
+    .orderDetails{
+        width: 100%;
+    }
+}

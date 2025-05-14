@@ -104,7 +104,7 @@ export default function Basket() {
                     className={style.removeButton}
                     onClick={() => removeFromBasket(item.id)}
                   >
-                    X
+                    удалить
                   </button>
                 </div>
               ))}
