@@ -1,40 +1,60 @@
-.container{
-    width: 80%;
-    margin: 0 auto;
+.container {
+  width: 80%;
+  margin: 0 auto;
 }
-.error{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+.error {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
-.error>img{
-    width: 300px;
-    height: 270px;
+.error > img {
+  width: 300px;
+  height: 270px;
 }
-.error>p{
-    font-size: 300px;
-    color: #339933;
+.error > p {
+  font-size: 300px;
+  color: #339933;
 }
-.text{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-.button{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
+.button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
 }
-.button>button{
-    width: 200px;
-    height: 50px;
-    background-color: #339933;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
+.button > button {
+  width: 200px;
+  height: 50px;
+  background-color: #339933;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .error > p {
+    font-size: 200px;
+  }
+  .error > img {
+  width: 250px;
+  height: 230px;
+}
+}
+
+@media (max-width: 530px) {
+  .error > p {
+    font-size: 100px;
+  }
+  .error > img {
+  width: 150px;
+  height: 130px;
+}
 }

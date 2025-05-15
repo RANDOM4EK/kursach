@@ -27,8 +27,8 @@ export default function Sales() {
           <div className={style.itemText}>
             <p>Decorative forged bridge</p>
             <div className={style.itemPrice}>
-              <p>$500</p>
-              <p className={style.itemPriceDiscount}>$1000</p>
+              <p>$99</p>
+              <p className={style.itemPriceDiscount}>$150</p>
             </div>
           </div>
         </div>
@@ -39,8 +39,8 @@ export default function Sales() {
           <div className={style.itemText}>
             <p>Decorative forged bridge</p>
             <div className={style.itemPrice}>
-              <p>$500</p>
-              <p className={style.itemPriceDiscount}>$1000</p>
+              <p>$150</p>
+              <p className={style.itemPriceDiscount}>$200</p>
             </div>
           </div>
         </div>
@@ -51,8 +51,8 @@ export default function Sales() {
           <div className={style.itemText}>
             <p>Decorative forged bridge</p>
             <div className={style.itemPrice}>
-              <p>$500</p>
-              <p className={style.itemPriceDiscount}>$1000</p>
+              <p>$199</p>
+              <p className={style.itemPriceDiscount}>$240</p>
             </div>
           </div>
         </div>

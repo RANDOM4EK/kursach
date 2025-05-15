@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import style from './Heder.module.css';
+import { useState } from 'react';
+import style from './Header.module.css';
 import logo from "../../../assets/logo.png";
 import icon from "../../../assets/icon.svg";
 import { Link } from 'react-router-dom';
 
 export default function Header() {
   const [isFormVisible, setFormVisible] = useState(false);
+  const [isMenuOpen, setMenuOpen] = useState(false);
 
   const handleOpenForm = () => {
     setFormVisible(true);
@@ -15,16 +16,31 @@ export default function Header() {
     setFormVisible(false);
   };
 
+  const toggleMenu = () => {
+    setMenuOpen(!isMenuOpen);
+  };
+
   return (
     <header className={style.header}>
-      <div className={style.logo}> <Link to="/"><img src={logo} alt="" /></Link></div>
-      <div className={style.navigation}>
+      <div className={style.logo}> 
+        <Link to="/"><img src={logo} alt="" /></Link>
+      </div>
+      
+      <button className={style.burger_menu} onClick={toggleMenu}>
+        ☰
+      </button>
+
+      <nav className={`${style.navigation} ${isMenuOpen ? style.open : ''}`}>
         <span> <Link to="/">Main Page</Link></span>
         <span> <Link to="/Categories">Categories</Link></span>
         <span><Link to="/All_Product">All products</Link></span>
         <span onClick={handleOpenForm}>Registr</span>
+      </nav>
+
+      <div className={style.purchases}>
+        <Link to={'/basket'}><img src={icon} alt="" /></Link>
       </div>
-      <div className={style.purchases}><Link to={'/basket'}><img src={icon} alt="" /></Link></div>
+
       {isFormVisible && (
         <div className={style.form_container}>
           <form onSubmit={(e) => { e.preventDefault(); handleCloseForm(); }}>
