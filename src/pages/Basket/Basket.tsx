@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Header from "../../components/Home/Header/Header";
 import Footer from "../../components/Home/Footer/Footer";
 import style from "./Basket.module.css";
@@ -6,8 +7,21 @@ import useBasketStore from "../../store/Store";
 
 export default function Basket() {
   const navigate = useNavigate();
+  const { basket, removeFromBasket, updateQuantity, setBasket } = useBasketStore();
 
-  const { basket, removeFromBasket, updateQuantity } = useBasketStore();
+
+  useEffect(() => {
+    const savedBasket = localStorage.getItem("basket");
+    if (savedBasket) {
+      const parsedBasket = JSON.parse(savedBasket);
+      setBasket(parsedBasket);
+    }
+  }, []);
+
+
+  useEffect(() => {
+    localStorage.setItem("basket", JSON.stringify(basket));
+  }, [basket]);
 
   const incrementQuantity = (id: number) => {
     const item = basket.find((item) => item.id === id);
@@ -18,9 +32,8 @@ export default function Basket() {
 
   const decrementQuantity = (id: number) => {
     const currentItem = basket.find((item) => item.id === id);
-    const currentQuantity = currentItem ? currentItem.quantity : 0;
-    if (currentQuantity > 1) {
-      updateQuantity(id, currentQuantity - 1);
+    if (currentItem && currentItem.quantity > 1) {
+      updateQuantity(id, currentItem.quantity - 1);
     }
   };
 
@@ -28,11 +41,10 @@ export default function Basket() {
     (sum, item) =>
       sum +
       item.quantity *
-        (item.isDiscounted
-          ? item.price - item.price * item.discount
-          : item.price),
+        (item.isDiscounted ? item.price - item.price * item.discount : item.price),
     0
   );
+
   const totalQuantity = basket.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
@@ -43,10 +55,7 @@ export default function Basket() {
         {basket.length === 0 ? (
           <>
             <p>Looks like you have no items in your basket currently.</p>
-            <button
-              className={style.startShopping}
-              onClick={() => navigate(`/All_Product`)}
-            >
+            <button className={style.startShopping} onClick={() => navigate(`/All_Product`)}>
               Continue Shopping
             </button>
           </>
@@ -55,55 +64,24 @@ export default function Basket() {
             <div className={style.basketItemsList}>
               {basket.map((item) => (
                 <div key={item.id} className={style.basketItem}>
-                  <img
-                    src={item.img}
-                    alt={item.title}
-                    className={style.itemImage}
-                  />
+                  <img src={item.img} alt={item.title} className={style.itemImage} />
                   <div className={style.itemDetails}>
                     <h2>{item.title}</h2>
-
                     <div className={style.quantityControl}>
-                      <button
-                        className={style.increment}
-                        onClick={() => decrementQuantity(item.id)}
-                      >
-                        {" "}
-                        -{" "}
-                      </button>
+                      <button className={style.increment} onClick={() => decrementQuantity(item.id)}> - </button>
                       <p>{item.quantity}</p>
-                      <button
-                        className={style.increment}
-                        onClick={() => incrementQuantity(item.id)}
-                      >
-                        {" "}
-                        +{" "}
-                      </button>
-
+                      <button className={style.increment} onClick={() => incrementQuantity(item.id)}> + </button>
                       {item.isDiscounted && (
                         <p className={style.itemPrice}>
-                          {"$" +
-                            Math.round(
-                              item.price - item.price * item.discount
-                            ) *
-                              item.quantity}
+                          {"$" + Math.round((item.price - item.price * item.discount) * item.quantity)}
                         </p>
                       )}
-                      <p
-                        className={
-                          item.isDiscounted
-                            ? style.itemPriceDiscount
-                            : style.itemPrice
-                        }
-                      >
+                      <p className={item.isDiscounted ? style.itemPriceDiscount : style.itemPrice}>
                         {"$" + item.price * item.quantity}
                       </p>
                     </div>
                   </div>
-                  <button
-                    className={style.removeButton}
-                    onClick={() => removeFromBasket(item.id)}
-                  >
+                  <button className={style.removeButton} onClick={() => removeFromBasket(item.id)}>
                     удалить
                   </button>
                 </div>
@@ -117,10 +95,12 @@ export default function Basket() {
                 <p className={style.totalPrice}>${totalPrice.toFixed(0)},00</p>
               </div>
               <form action="" className={style.form}>
-                <input type="text" placeholder="Name"/>
-                <input type="text" placeholder="Phone number"/>
-                <input type="text" placeholder="Email"/>
-                <button className={style.buttonForm} onClick={() => alert("name")}>Order</button>
+                <input type="text" placeholder="Name" />
+                <input type="text" placeholder="Phone number" />
+                <input type="text" placeholder="Email" />
+                <button className={style.buttonForm} onClick={() => alert("Order placed!")}>
+                  Order
+                </button>
               </form>
             </div>
           </div>

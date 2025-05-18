@@ -4,6 +4,9 @@
     margin: 0 auto;
     margin-top: 40px;
 }
+.container > h1{
+    text-align: center;
+}
 .cardCollection{
     display: flex;
     flex-wrap: wrap;
