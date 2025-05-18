@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Header from "../../components/Home/Header/Header";
 import Footer from "../../components/Home/Footer/Footer";
 import style from "./Basket.module.css";
@@ -8,17 +8,30 @@ import useBasketStore from "../../store/Store";
 export default function Basket() {
   const navigate = useNavigate();
   const { basket, removeFromBasket, updateQuantity, setBasket } = useBasketStore();
+  const [userData, setUserData] = useState({
+    name: localStorage.getItem("userName") || "",
+    phone: localStorage.getItem("userPhone") || "",
+    email: localStorage.getItem("userEmail") || ""
+  });
 
+  const [isPurchaseComplete, setIsPurchaseComplete] = useState(false);
 
+  // Загружаем корзину из localStorage при загрузке страницы
   useEffect(() => {
     const savedBasket = localStorage.getItem("basket");
     if (savedBasket) {
       const parsedBasket = JSON.parse(savedBasket);
       setBasket(parsedBasket);
     }
+
+    // Загружаем данные пользователя, если он зарегистрирован
+    const savedUser = localStorage.getItem("userData");
+    if (savedUser) {
+      setUserData(JSON.parse(savedUser));
+    }
   }, []);
 
-
+  // Сохраняем корзину в localStorage при изменении
   useEffect(() => {
     localStorage.setItem("basket", JSON.stringify(basket));
   }, [basket]);
@@ -45,7 +58,17 @@ export default function Basket() {
     0
   );
 
+
+  const discountedPrice = totalPrice * 0.95;
+
   const totalQuantity = basket.reduce((sum, item) => sum + item.quantity, 0);
+
+  const handleOrder = () => {
+    alert("Order placed successfully!");
+    setIsPurchaseComplete(true);
+    localStorage.removeItem("basket");
+    setBasket([]);
+  };
 
   return (
     <>
@@ -91,14 +114,18 @@ export default function Basket() {
               <h2>Order details</h2>
               <p>{totalQuantity} items</p>
               <div className={style.totalPriceContainer}>
-                <p>Total</p>
-                <p className={style.totalPrice}>${totalPrice.toFixed(0)},00</p>
+                <p>Original Total</p>
+                <p className={style.totalPrice}>${totalPrice.toFixed(0)}</p>
+              </div>
+              <div className={style.totalPriceContainer}>
+                <p>Discounted Total (5% off)</p>
+                <p className={style.totalPrice}>${discountedPrice.toFixed(0)}</p>
               </div>
               <form action="" className={style.form}>
-                <input type="text" placeholder="Name" />
-                <input type="text" placeholder="Phone number" />
-                <input type="text" placeholder="Email" />
-                <button className={style.buttonForm} onClick={() => alert("Order placed!")}>
+                <input type="text" placeholder="Name" value={userData.name} onChange={(e) => setUserData({ ...userData, name: e.target.value })} />
+                <input type="text" placeholder="Phone number" value={userData.phone} onChange={(e) => setUserData({ ...userData, phone: e.target.value })} />
+                <input type="text" placeholder="Email" value={userData.email} onChange={(e) => setUserData({ ...userData, email: e.target.value })} />
+                <button className={style.buttonForm} onClick={handleOrder}>
                   Order
                 </button>
               </form>
