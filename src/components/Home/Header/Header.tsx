@@ -63,6 +63,7 @@ export default function Header() {
         )}
       </nav>
 
+
       <div className={style.purchases}>
         <Link to={'/basket'}><img src={icon} alt="" /></Link>
       </div>
