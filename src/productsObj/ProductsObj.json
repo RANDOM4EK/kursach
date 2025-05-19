@@ -3,7 +3,7 @@
   {
     "id": 1,
     "title": "Secateurs",
-    "price": 240,
+    "price": 10,
     "discount": 0.17,
     "isDiscounted": true,
     "img": "./product1.png",
@@ -12,7 +12,7 @@
   {
     "id": 2,
     "title": "Collection for berries (plastic)",
-    "price": 35,
+    "price": 12,
     "discount": 0.26,
     "isDiscounted": true,
     "img": "./product2.png",
@@ -21,7 +21,7 @@
   {
     "id": 3,
     "title": "Gloves (black)",
-    "price": 14,
+    "price": 3,
     "discount": 0.36,
     "isDiscounted": true,
     "img": "./product3.png",
@@ -30,7 +30,7 @@
   {
     "id": 4,
     "title": "Sickle-shaped hacksaw",
-    "price": 155,
+    "price": 18,
     "discount": 1,
     "isDiscounted": false,
     "img": "./product4.png",
@@ -39,7 +39,7 @@
   {
     "id": 5,
     "title": "Bayonet shovel",
-    "price": 180,
+    "price": 20,
     "discount": 1,
     "isDiscounted": false,
     "img": "./product5.png",
@@ -48,7 +48,7 @@
   {
     "id": 6,
     "title": "Garden pitchfork",
-    "price": 179,
+    "price": 15,
     "discount": 1,
     "isDiscounted": false,
     "img": "./product6.png",
@@ -57,7 +57,7 @@
   {
     "id": 7,
     "title": "Barbell",
-    "price": 12,
+    "price": 8,
     "discount": 1,
     "isDiscounted": false,
     "img": "./product7.png",
@@ -66,7 +66,7 @@
   {
     "id": 8,
     "title": "Souvenir thermometer",
-    "price": 120,
+    "price": 10,
     "discount": 0.18,
     "isDiscounted": true,
     "img": "./product8.png",
@@ -75,7 +75,7 @@
   {
     "id": 9,
     "title": "Decorative forged bridge",
-    "price": 1000,
+    "price": 150,
     "discount": 0.50,
     "isDiscounted": true,
     "img": "./product9.png",
@@ -84,7 +84,7 @@
   {
     "id": 10,
     "title": "Flower basket",
-    "price": 150,
+    "price": 12,
     "discount": 0.34,
     "isDiscounted": true,
     "img": "./product10.png",
@@ -93,7 +93,7 @@
   {
     "id": 11,
     "title": "Aquarium lock",
-    "price": 200,
+    "price": 25,
     "discount": 0.25,
     "isDiscounted": true,
     "img": "./product11.png",

@@ -13,10 +13,6 @@ export default function Header() {
     setFormVisible(true);
   };
 
-  const handleCloseForm = () => {
-    setFormVisible(false);
-  };
-
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
   };
@@ -60,7 +56,7 @@ export default function Header() {
         {userName ? (
           <>
             <span>{userName}</span> 
-            <button className={style.logoutButton} onClick={handleLogout}>Выйти</button>
+            <button className={style.logoutButton} onClick={handleLogout}>Выйти из аккаунта</button>
           </>
         ) : (
           <span onClick={handleOpenForm}>Registr</span>

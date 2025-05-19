@@ -16,7 +16,6 @@ export default function Basket() {
 
   const [isPurchaseComplete, setIsPurchaseComplete] = useState(false);
 
-  // Загружаем корзину из localStorage при загрузке страницы
   useEffect(() => {
     const savedBasket = localStorage.getItem("basket");
     if (savedBasket) {
@@ -24,14 +23,12 @@ export default function Basket() {
       setBasket(parsedBasket);
     }
 
-    // Загружаем данные пользователя, если он зарегистрирован
     const savedUser = localStorage.getItem("userData");
     if (savedUser) {
       setUserData(JSON.parse(savedUser));
     }
   }, []);
 
-  // Сохраняем корзину в localStorage при изменении
   useEffect(() => {
     localStorage.setItem("basket", JSON.stringify(basket));
   }, [basket]);
@@ -119,7 +116,7 @@ export default function Basket() {
               </div>
               <div className={style.totalPriceContainer}>
                 <p>Discounted Total (5% off)</p>
-                <p className={style.totalPrice}>${discountedPrice.toFixed(0)}</p>
+                <p className={style.totalPrice}>${discountedPrice.toFixed(1)}</p>
               </div>
               <form action="" className={style.form}>
                 <input type="text" placeholder="Name" value={userData.name} onChange={(e) => setUserData({ ...userData, name: e.target.value })} />
